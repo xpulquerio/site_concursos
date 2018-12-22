@@ -1,0 +1,20 @@
+form {
+    width: 100%;
+}
+iframe{
+    height: 100%;
+    width: 100%;
+}
+
+
+.tabela_questoes{width: 100%}
+
+body{
+    margin: 10px 7% 0 7%;
+}
+
+.texto {
+    text-align: justify;
+    margin: 0 5% 0 5%;
+}
+

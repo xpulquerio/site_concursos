@@ -1,0 +1,46 @@
+.botao {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border-style: solid;
+}
+.botao:hover {
+    border-color: lightskyblue;
+    cursor: pointer;
+    
+}
+.botao:active {
+    border-style: inset;
+}
+.figure_principal {
+    width: 250px;
+}
+#main_img{
+    width: 100%;
+}
+
+.main_table {
+    text-align: justify;
+}
+
+.main_table{
+    width: 100%;
+  
+}
+
+iframe{
+    border-style: none;
+}
+
+#alternativa:hover{
+    cursor: pointer;
+    background-color: lightblue;
+}
+#alternativa{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+
+body {font-family: Arial}
