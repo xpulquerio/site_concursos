@@ -11,13 +11,40 @@ if($SendCad){
     $texto = filter_input(INPUT_POST, 'texto', FILTER_SANITIZE_STRING);
     $pergunta = filter_input(INPUT_POST, 'pergunta', FILTER_SANITIZE_STRING);
     $alternativa1 = filter_input(INPUT_POST, 'alternativa1', FILTER_SANITIZE_STRING);
-    $alternativa2 = filter_input(INPUT_POST, 'alternativa2', FILTER_SANITIZE_EMAIL);
+    $alternativa2 = filter_input(INPUT_POST, 'alternativa2', FILTER_SANITIZE_STRING);
     $alternativa3 = filter_input(INPUT_POST, 'alternativa3', FILTER_SANITIZE_STRING);
     $alternativa4 = filter_input(INPUT_POST, 'alternativa4', FILTER_SANITIZE_STRING);
     $alternativa5 = filter_input(INPUT_POST, 'alternativa5', FILTER_SANITIZE_STRING);
     $correta = filter_input(INPUT_POST, 'correta', FILTER_SANITIZE_STRING);
     $resolucao = filter_input(INPUT_POST, 'resolucao', FILTER_SANITIZE_STRING);
     $prova_id = filter_input(INPUT_POST, 'prova_id', FILTER_SANITIZE_STRING);
+    
+    
+    
+    if($img_url == ''){
+        $img_url = NULL;
+    }
+    
+    if($legenda_da_imagem == ''){
+        $legenda_da_imagem = NULL;
+    }
+    if($texto == ''){
+        $texto = NULL;
+    }
+    
+    if($alternativa3 == ''){
+        $alternativa3 = NULL;
+    }
+    if($alternativa4 == ''){
+        $alternativa4 = NULL;
+    }
+    
+    if($alternativa5 == ''){
+        $alternativa5 = NULL;
+    }
+    if($resolucao == ''){
+        $resolucao = NULL;
+    }
         
     $result_artista = "INSERT INTO questao (legenda_da_imagem, img_url, texto, pergunta, alternativa1, alternativa2, alternativa3, alternativa4, alternativa5, correta, resolucao, prova_id) VALUES (:legenda_da_imagem, :img_url, :texto, :pergunta, :alternativa1, :alternativa2, :alternativa3, :alternativa4, :alternativa5, :correta, :resolucao, :prova_id)";
     
