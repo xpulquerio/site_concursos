@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php 
+
+include_once("banco/conexao.php");
+
+?>
 <html lang="pt-br">
     <head>
         <title>Cubo das Questões</title> <!-- Titulo do HTML  onselectstart="return false" NAO DEIXA SELECIONAR-->
@@ -11,5 +16,19 @@
    
     <body>
         <?php include_once "incs/menu.php"; ?>
+        
+        <?php 
+        
+        include "logica/select_questoes_por_materia.php";
+        
+        echo "Quantidade de questões por matéria:<br><br>";
+        while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
+            echo "<b>".$row['quantidade']."</b> questões de ".$row['nome']."<br><hr>";
+            
+        }
+        
+        
+        ?>
+        
     </body>
 </html>

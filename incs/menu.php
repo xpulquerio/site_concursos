@@ -3,6 +3,7 @@
    echo "
        <nav id='menu'>
             <ul>
+                <a href='index.php'><li>Início</li></a>
                 <a href='questoes.php'><li>Questões</li></a>
                 <a href='cadastrar_banca.php'><li>Cadastrar Banca</li></a>
                 <a href='cadastrar_orgao.php'><li>Cadastrar Órgão</li></a>
