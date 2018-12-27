@@ -43,4 +43,7 @@ iframe{
 }
 
 
-body {font-family: Arial}
+body {
+    font-family: Arial;
+    margin: 10px 7% 0 7%;
+}

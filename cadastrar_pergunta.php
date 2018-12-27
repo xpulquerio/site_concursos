@@ -13,7 +13,7 @@ include_once("banco/conexao.php");
         <link rel="stylesheet" type="text/css" href="css/estilo.css"> 
         <!-- <link rel="icon" href="imgs/icone.png" type="image/x-icon" /> -->
         <link rel="shortcut icon" href="imgs/icone.png" type="image/x-icon" />
-        
+        <link rel="stylesheet" type="text/css" href="css/style_menu.css"> 
         <style>
         
             input, textarea, select{ width: 100%;}
@@ -27,7 +27,10 @@ include_once("banco/conexao.php");
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
         }
-        ?>
+    ?>
+    
+    <?php include_once "incs/menu.php"; ?>
+    
     <form method="POST" action="logica/processa_cadastro_questao.php">
         <table class='main_table'>
             <tr>

@@ -11,7 +11,8 @@ include_once("banco/conexao.php");
         <meta charset="utf-8"/> <!-- codificação do HTML -->
         <!-- <link rel="icon" href="imgs/icone.png" type="image/x-icon" /> -->
         <link rel="shortcut icon" href="imgs/icone.png" type="image/x-icon" />
-        
+        <link rel="stylesheet" type="text/css" href="css/style_menu.css"> 
+        <link rel="stylesheet" type="text/css" href="css/estilo.css"> 
         <style>
         
             input, textarea, select{ width: 100%;}
@@ -25,7 +26,10 @@ include_once("banco/conexao.php");
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
         }
-        ?>
+    ?>
+    
+    <?php include_once "incs/menu.php"; ?>
+    
     <form method="POST" action="logica/processa_cadastro_prova.php">
         <table class='main_table'>
             <tr>
@@ -85,6 +89,53 @@ include_once("banco/conexao.php");
                 </td>
             </tr>
         </table>
+        
+        <section>
+            <table>
+                <tr>
+                    <th>
+                    #
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        ANO
+                    </th>
+                    <th>
+                        CARGO
+                    </th>
+                    <th>
+                        NÍVEL
+                    </th>
+                    <th>
+                        BANCA
+                    </th>
+                    <th>
+                        ÓRGÃO
+                    </th>
+                </tr>
+                <?php 
+                $n = 0;
+                include 'logica/select_todas_provas.php';   
+
+                while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
+                    $n = $n+1;
+                echo "
+                <tr>
+                    <td><b>".$n."</b></td>
+                    <td>".$row['id']."</td>
+                    <td>".$row['ano']."</td>
+                    <td>".$row['cargo']."</td>
+                    <td>".$row['nivel']."</td>
+                    <td>".$row['sigla']."</td>
+                    <td>".$row['orgao']."</td>
+                </tr>";
+                }
+                ?>
+            </table>
+        </section>
+        
     </form>
 </body>
    

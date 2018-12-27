@@ -1,0 +1,25 @@
+/*MENU*/
+#menu ul {
+    text-align: center;
+    list-style: none;
+    /*border: 1px solid black;*/
+    
+    
+}
+#menu ul li { 
+    display: inline-block;
+    border: 2px skyblue solid;
+    padding: 5px 10px 5px 10px;
+    font-size: 12pt;
+    color: black;
+    text-decoration: none;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: skyblue;
+
+}
+
+#menu li:hover{
+    border-top: 2px solid black;/*#0080FF;*/
+    border-bottom: 2px solid black;
+}

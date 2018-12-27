@@ -11,7 +11,8 @@ include("banco/conexao.php");
         <meta charset="utf-8"/> <!-- codificação do HTML -->
         <!-- <link rel="icon" href="imgs/icone.png" type="image/x-icon" /> -->
         <link rel="shortcut icon" href="imgs/icone.png" type="image/x-icon" />
-        
+        <link rel="stylesheet" type="text/css" href="css/style_menu.css">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css"> 
         <style>
         
             input, textarea, select{ width: 100%;}
@@ -25,12 +26,15 @@ include("banco/conexao.php");
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
         }
-        ?>
+    ?>
+    
+    <?php include_once "incs/menu.php"; ?>
+    
     <form method="POST" action="logica/processa_cadastro_orgao.php">
         <table class='main_table'>
             <tr>
                 <td>
-                    Orgão:
+                    Órgão:
                 </td>
                 <td>
                     <input name="nome" type="text">
@@ -55,6 +59,41 @@ include("banco/conexao.php");
         </table>
     </form>
 
+    <section>
+        <table>
+            <tr>
+                <th>
+                #
+                </th>
+                <th>
+                    ID
+                </th>
+                <th>
+                    SIGLA
+                </th>
+                <th>
+                    NOME
+                </th>
+            </tr>
+            <?php 
+            $n = 0;
+            include 'logica/select_todos_orgaos.php';   
+            
+            while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
+                $n = $n+1;
+            echo "
+            <tr>
+                <td><b>".$n."</b></td>
+                <td>".$row['id']."</td>
+                <td>".$row['sigla']."</td>
+                <td>".$row['nome']."</td>
+            </tr>";
+            }
+            ?>
+        </table>
+    
+    </section>
+    
 </body>
    
 </html>
