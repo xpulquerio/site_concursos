@@ -30,7 +30,7 @@ include("banco/conexao.php");
     
     <?php include_once "incs/menu.php"; ?>
     
-    <form method="POST" action="/logica/processa_cadastro_materia.php">
+    <form method="POST" action="logica/processa_cadastro_materia.php">
         <table class='main_table'>
             <tr>
                 <td>

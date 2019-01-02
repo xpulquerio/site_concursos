@@ -9,7 +9,7 @@ $SendCad = filter_input(INPUT_POST, 'SendCad', FILTER_SANITIZE_STRING);
 
 if($SendCad){
     //Preencher formulário
-    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+    $nome = filter_input(INPUT_POST, 'materia', FILTER_SANITIZE_STRING);
 
     $result_materia = "INSERT INTO materia (nome) VALUES (:nome)";
     

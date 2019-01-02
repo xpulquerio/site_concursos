@@ -19,13 +19,29 @@ include_once("banco/conexao.php");
         
         <?php 
         
+        setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
+
+        echo ucwords(strftime("%A")).", ".date("d/m/Y, H:i", strtotime("-4 hour")).'<br><br>';
+        
+        
+        $total = 0;
+        
         include "logica/select_questoes_por_materia.php";
         
-        echo "Quantidade de questões por matéria:<br><br>";
+        echo "Quantidade de questões por matéria:
+        <br>
+        <br>";
         while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
-            echo "<b>".$row['quantidade']."</b> questões de ".$row['nome']."<br><hr>";
+            echo "<b>".$row['quantidade']."</b> questões de ".$row['nome']."
+            <br><hr>";
             
+            $total += $row['quantidade'];
         }
+        
+        
+       echo "Total = <b>$total</b>
+       <br><hr>";
+            
         
         
         ?>
