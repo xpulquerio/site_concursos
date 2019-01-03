@@ -71,7 +71,7 @@ include("banco/conexao.php");
             while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
                 $n = $n+1;
             echo "
-            <tr>
+            <tr id='realcar'>
                 <td><b>".$n."</b></td>
                 <td>".$row['id']."</td>
                 <td>".$row['nome']."</td>
