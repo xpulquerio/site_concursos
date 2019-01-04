@@ -79,6 +79,11 @@ include_once("banco/conexao.php");
             </tr>
             <tr>
                 <td>
+                    lt;gt;
+                </td>
+            </tr>
+            <tr>
+                <td>
                     Pergunta:
                 </td>
                 <td>

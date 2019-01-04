@@ -51,15 +51,15 @@ if($SendCad){
     $insert_artista = $conn->prepare($result_artista);
     $insert_artista->bindParam(':legenda_da_imagem', $legenda_da_imagem);
     $insert_artista->bindParam(':img_url', $img_url);
-    $insert_artista->bindParam(':texto', $texto);
-    $insert_artista->bindParam(':pergunta', $pergunta);
+    $insert_artista->bindParam(':texto', html_entity_decode($texto)); //transformar os códigos em texto html.
+    $insert_artista->bindParam(':pergunta', html_entity_decode($pergunta));
     $insert_artista->bindParam(':alternativa1', $alternativa1);
     $insert_artista->bindParam(':alternativa2', $alternativa2);
     $insert_artista->bindParam(':alternativa3', $alternativa3);
     $insert_artista->bindParam(':alternativa4', $alternativa4);
     $insert_artista->bindParam(':alternativa5', $alternativa5);
     $insert_artista->bindParam(':correta', $correta);
-    $insert_artista->bindParam(':resolucao', $resolucao);
+    $insert_artista->bindParam(':resolucao', html_entity_decode($resolucao));
     $insert_artista->bindParam(':prova_id', $prova_id);
     
     
@@ -80,7 +80,7 @@ if($SendCad){
     $insert_questao_assunto->bindParam(':assunto_id', $assunto_id);
     $insert_questao_assunto->bindParam(':questao_id', $questao_id);
     
-   
+    
     
     if($insert_artista->execute() and $insert_questao_assunto->execute()){
         $_SESSION['msg'] = "<p style='color:green'>Questão adicionada com sucesso</p>";

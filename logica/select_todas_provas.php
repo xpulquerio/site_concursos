@@ -6,7 +6,7 @@ INNER JOIN banca
 ON prova.banca_id = banca.id
 INNER JOIN orgao
 ON prova.orgao_id = orgao.id  
-ORDER BY `prova`.`nivel` DESC, `prova`.`id` ASC";
+ORDER BY prova.nivel desc, prova.cargo asc, prova.ano asc, banca.sigla, orgao.nome";
         
         //Seleciona registros
         $resultado = $conn->prepare($string1);
