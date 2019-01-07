@@ -17,7 +17,7 @@ echo "              </select>
             </tr>
             <tr>
                 <td>
-                    Pergunta: <input type='text' name='pesquisa' value=''/>
+                    Enunciado: <input type='text' name='pesquisa' value=''/>
                 </td>
             </tr>
             <tr>
